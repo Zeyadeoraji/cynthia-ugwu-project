@@ -42,10 +42,7 @@ document.querySelectorAll(".elem").forEach(function (elem) {
     diffrot = detail.clientX - rotate;
     rotate = detail.clientX;
 
-    // console.log(detail.clientY - elem.getBoundingClientRect);
-    // console.log(detail.clientY - elem.getBoundingClientRect().top);
     var diff = detail.clientY - elem.getBoundingClientRect().top;
-    // elem.querySelector("img").style.display = none;
     gsap.to(elem.querySelectorAll(".img"), {
       opacity: 1,
       ease: Power3,
@@ -53,7 +50,6 @@ document.querySelectorAll(".elem").forEach(function (elem) {
       left: detail.clientX,
       rotate: gsap.utils.clamp(-20, 20, diffrot * 0.8),
     });
-    console.log("Hello");
   });
 
   elem.addEventListener("mouseleave", function (detail) {
@@ -64,7 +60,6 @@ document.querySelectorAll(".elem").forEach(function (elem) {
       ease: Power3,
       duration: 0.5,
     });
-    console.log("Hello");
   });
 });
 
